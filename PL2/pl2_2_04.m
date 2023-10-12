@@ -4,7 +4,7 @@ N = 1e5;
 n = 5;
 p = 0.3;
 
-pecas = rand(n, N) < 0.3;
+pecas = rand(n, N) < p;
 defeito = sum(pecas);
 pX = zeros(1, 6);
 
@@ -28,7 +28,7 @@ disp(Piii);
 pXTeorica = zeros(1, 6);
 
 for k = 0:5
-    pXTeorica(k+1) = nchoosek(5, k) * (p)^k * (p)^(5 - k);
+    pXTeorica(k+1) = nchoosek(5, k) * (p)^k * (1-p)^(5 - k);
 end
 disp(pXTeorica);
 disp(cumsum(pXTeorica));
