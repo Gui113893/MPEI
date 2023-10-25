@@ -18,3 +18,12 @@ Y = [5, 10, 100, 200];
 for i=1:4
     fprintf("%3dº Transição:\nA = %.2f%%\nB = %.2f%%\nC = %.2f%%\nD = %.2f%%\n", Y(1, i), X(1, i)*100, X(2, i)*100, X(3, i)*100, X(4, i)*100);
 end
+
+%c)
+M = [T - eye(4); ones(1, 4)];
+x = [0 0 0 0 1]';
+u = M\x;
+
+fprintf("Limite A = %.2f%%\nLimite B = %.2f%%\nLimite C = %.2f%%\nLimite D = %.2f%%\n", u(1,1)*100, u(2,1)*100, u(3,1)*100, u(4,1)*100);
+
+
