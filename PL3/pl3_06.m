@@ -91,6 +91,8 @@ disp(pAbsorv3);
 disp("Probabilidade de ser absorvido no estado 5 começando no estado 1");
 disp(pAbsorv5);
 
+%Os valores coincidem com os valores para que as matrizes da alínea c)
+%convergem
 
 
 
