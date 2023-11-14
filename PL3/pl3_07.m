@@ -70,12 +70,12 @@ max_diff = 0;
 
 %Limite de tolerância
 limit = 10^(-4);
-for i = 2:10
+for i = 2:20
     r(:, i+1) = H * r(:, i);
     % Verificar a diferença entre  2 iterações consecutivas
     max_diff = abs(r(:, i) - r(:, i-1));
     % Se a diferença for maior que o limite, interrompe o loop
-    if max_diff > limit
+    if max_diff < limit
         disp(['Diferença maior que limite alcançada após ', num2str(i), ' iterações.'])
         break;
     end
