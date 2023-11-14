@@ -6,10 +6,10 @@ disp(T);
 %b)
 X1 = [1; 0; 0]; %Primeiro dia é de sol
 X2 = T*X1; %Probabilidade do segundo dia
-X3 = T*X2; %Probabilidade do terceiro dia
+X3 = X2(1,1) * T(1,1);
 disp("b)")
 fprintf("Estar sol no segundo dia: %.2f%%\n", X2(1,1)*100);
-fprintf("Estar sol no terceiro dia: %.2f%%\n", (X2(1,1)^2)*100);
+fprintf("Estar sol no terceiro dia: %.2f%%\n", X3*100);
 
 %c)
 %C3 - Chover no terceiro dia  C2 - Chover no segundo dia *C3 - Não chover no terceiro dia *C2 - Não
@@ -17,7 +17,7 @@ fprintf("Estar sol no terceiro dia: %.2f%%\n", (X2(1,1)^2)*100);
 %P(*C3 /\ *C2) = P(*(C3 \/ C2)) = 1 - P(C3 \/ C2)
 %P(C3 \/ C2) = P(C3) + P(C2) - P(C3 /\ C2)
 %P(C3 /\ C2) = P(C3|C2) * P(C2)
-
+X3 = T*X2; %Probabilidade do terceiro dia
 PC2 = X2(3,1);
 PC3 = X3(3,1);
 PC2e3 = T(3,3) * PC2;
