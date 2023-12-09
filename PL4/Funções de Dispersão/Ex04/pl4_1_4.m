@@ -22,21 +22,16 @@ figure(4);
 Uniformidade_1(hashcodes4, table_sizes, "sdbm");
 
 fprintf("\n");
-Uniformidade_2(hashcodes1, "DJB31MA", table_sizes(1), 1);
-Uniformidade_2(hashcodes1, "DJB31MA", table_sizes(2), 2);
-Uniformidade_2(hashcodes1, "DJB31MA", table_sizes(3), 3);
+Uniformidade_2(hashcodes1, "DJB31MA", table_sizes);
+
 fprintf("\n");
-Uniformidade_2(hashcodes1, "hashstring", table_sizes(1), 1);
-Uniformidade_2(hashcodes1, "hashstring", table_sizes(2), 2);
-Uniformidade_2(hashcodes1, "hashstring", table_sizes(3), 3);
+Uniformidade_2(hashcodes2, "hashstring", table_sizes);
+
 fprintf("\n");
-Uniformidade_2(hashcodes1, "djb2", table_sizes(1), 1);
-Uniformidade_2(hashcodes1, "djb2", table_sizes(2), 2);
-Uniformidade_2(hashcodes1, "djb2", table_sizes(3), 3);
+Uniformidade_2(hashcodes3, "djb2", table_sizes);
 fprintf("\n");
-Uniformidade_2(hashcodes1, "sdbm", table_sizes(1), 1);
-Uniformidade_2(hashcodes1, "sdbm", table_sizes(2), 2);
-Uniformidade_2(hashcodes1, "sdbm", table_sizes(3), 3);
+
+Uniformidade_2(hashcodes4, "sdbm", table_sizes);
 fprintf("\n");
 fprintf("-------------------------Comparações das Funções de Hash-------------------------\n");
 
