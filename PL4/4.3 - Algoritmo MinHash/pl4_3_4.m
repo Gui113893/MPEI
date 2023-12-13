@@ -5,19 +5,34 @@ x = Nu;   %Número de utilizadores aleatórios
 users = randperm(Nu, x);
 
 Set = initFilmSet(u, users);
-matrix = makeMatrix(u, Set, users);
 for k = [50, 100, 200]
     fprintf("=====================K = %d =====================\n", k);
-    [signatures,tempoMinHash] = minHash(matrix, k);
+    % minHash e minHash2 são 2 maneiras diferentes de resolver o problema
+    % usando o método de minHash, uma por permutações e outra por funções
+    % dispersão.
+    % Fazer help {função} para saber mais pormenores ou ir diretamente ao 
+    % ficheiro de cada função
+    
+    % Tempo médio da minHash aproximado = 1,80s
+    filmes = unique(u(:,2));
+    [signatures,tempoMinHash] = minHash(filmes, Set, k);
+    
+    % Tempo médio da minHash2 aproximado = 2,96s
+    %[signatures, tempoMinHash] = minHash2(Set, k);
+    
     J = zeros(length(users));
     h = waitbar(0, 'Calculating Distances');
     tic;
     for n1=1:length(users)
         waitbar(n1/length(users), h);
-        for n2=n1+1:length(users)
-            J(n1,n2) = sum(signatures(:,n1) ~= signatures(:,n2))/k;
+        for n2 = n1+1:length(users)
+            c1 = signatures(:, n1);
+            c2 = signatures(:, n2);
+
+            J(n1, n2) = 1- sum(c1 == c2)/k;
         end
     end
+
     delete(h)
     tempoJaccard = toc;
     threshold = 0.4;
