@@ -13,11 +13,11 @@ for k = [50, 100, 200]
     % Fazer help {função} para saber mais pormenores ou ir diretamente ao 
     % ficheiro de cada função
     
-    % Tempo médio da minHash aproximado = 1,80s
+    % Tempo médio da minHash aproximado = 1,80s para k=200 Windows
     filmes = unique(u(:,2));
     [signatures,tempoMinHash] = minHash(filmes, Set, k);
     
-    % Tempo médio da minHash2 aproximado = 2,96s
+    % Tempo médio da minHash2 aproximado = 2,96s para k=200 Windows
     %[signatures, tempoMinHash] = minHash2(Set, k);
     
     J = zeros(length(users));
