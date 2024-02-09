@@ -9,13 +9,13 @@ To justify the need of probabilistic methods in the computer engineering context
 
 ## Content
 
-* Calculate the probability of events in random experiments and also in sequences of Bernoulli experiments;
-* Characterize random variables with known distributions (e.g. Binomial, Poissson, Uniform and Normal);
-* Calculate parameters such as: mean, variance, correlation, covariance and correlation coefficient;
-* Understand and describe the concept of stochastic process;
-* Calculate auto-correlation and auto-covariance;
-* Determine the state transition matrix of a Markov chain;
-* Calculate the probabilities of the states, of a Markov chain, after n iterations;
+* Probability Basics;
+* Random variables and distributions;
+* Basics of stochastic processes;
+* Renewal processes and Markov chains (in discrete time);
+* Simulation;
+* Generation of random numbers | Generation of random variables and Simulation;
+* Random counters | Bloom Filters | Jaccard index for searching similar sets.
 
 For more information: [MPEI-Universidade de Aveiro](https://www.ua.pt/pt/uc/12182)
 
